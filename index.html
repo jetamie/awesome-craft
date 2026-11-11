@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AWESOME CRAFT — 作品索引</title>
+<meta name="description" content="Awesome Craft：可交互的单文件 Web 实验索引。3A 大作、黑洞光线追踪可视化。">
+<meta name="theme-color" content="#080a0c">
+<meta property="og:title" content="AWESOME CRAFT — 作品索引">
+<meta property="og:description" content="两个零依赖、单文件的可交互 Web 实验。">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080a0c'/%3E%3Cpath d='M16 5 L27 16 L16 27 L5 16 Z' fill='none' stroke='%23ffb347' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23ffb347'/%3E%3C/svg%3E">
+<style>
+/* ============================================================
+   AWESOME CRAFT / index.html — GitHub Pages 入口
+   新增页面：复制下方一张 <a class="card"> 结构，改 href / data-src /
+   标题 / 描述即可（GitHub Pages 是静态站点，无法自动列举目录文件）。
+   实时预览只在支持 hover 的设备上按需加载，不影响首屏。
+   ============================================================ */
+:root{
+  --ink:#080a0c; --bone:#e8e4da;
+  --dim:rgba(232,228,218,.56); --faint:rgba(232,228,218,.30);
+  --line:rgba(232,228,218,.13); --line-2:rgba(232,228,218,.22);
+  --amber:#ffb347; --rust:#d2622a; --accent:#ffb86b;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; min-height:100vh; background:var(--ink); color:var(--bone);
+  font-family:var(--sans); line-height:1.6; -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(900px 520px at 78% -12%, rgba(255,150,70,.10), transparent 70%),
+    linear-gradient(rgba(232,228,218,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,228,218,.025) 1px, transparent 1px);
+  background-size:auto, 64px 64px, 64px 64px;
+}
+body::after{
+  content:""; position:fixed; inset:0; z-index:60; pointer-events:none; opacity:.045;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a{color:inherit}
+.wrap{max-width:1180px; margin:0 auto; padding:0 clamp(20px,5vw,48px)}
+
+/* ---------- header ---------- */
+.site-head{border-bottom:1px solid var(--line); position:relative; z-index:2}
+.site-head .wrap{display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:76px; flex-wrap:wrap; padding-top:14px; padding-bottom:14px}
+.brand{display:flex; align-items:center; gap:14px; text-decoration:none}
+.brand__mark{width:30px; height:30px; border:1px solid var(--amber); display:grid; place-items:center; transform:rotate(45deg); flex:none}
+.brand__mark span{transform:rotate(-45deg); color:var(--amber); font:700 12px/1 var(--mono)}
+.brand__name{font:700 14px/1 var(--mono); letter-spacing:.22em; white-space:nowrap}
+.brand__name em{color:var(--amber); font-style:normal}
+.head-right{display:flex; align-items:center; gap:clamp(16px,3vw,32px); font:500 10px/1 var(--mono); letter-spacing:.2em; color:var(--dim); text-transform:uppercase}
+.status{display:flex; align-items:center; gap:8px; white-space:nowrap}
+.status i{width:6px; height:6px; border-radius:50%; background:var(--amber); box-shadow:0 0 8px var(--amber); animation:blink 2.4s ease-in-out infinite}
+.head-right a{color:var(--bone); text-decoration:none; border-bottom:1px solid var(--line-2); padding-bottom:3px; transition:color .2s,border-color .2s; white-space:nowrap}
+.head-right a:hover{color:var(--amber); border-color:var(--amber)}
+
+/* ---------- intro ---------- */
+.intro{padding:clamp(56px,9vw,110px) 0 clamp(40px,6vw,64px); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:40px; align-items:end}
+.eyebrow{font:600 11px/1 var(--mono); letter-spacing:.28em; color:var(--amber); text-transform:uppercase; margin:0 0 26px}
+.eyebrow::before{content:"// "; color:var(--faint)}
+.intro h1{margin:0; font-size:clamp(42px,8.2vw,92px); line-height:1.02; font-weight:800; letter-spacing:-.02em}
+.intro h1 span{display:block; background:linear-gradient(96deg,var(--amber),var(--rust) 70%,#ff8a5c); -webkit-background-clip:text; background-clip:text; color:transparent}
+.lede{margin:26px 0 0; max-width:540px; color:var(--dim); font-size:14px; line-height:1.9}
+.intro__stats{display:flex; gap:clamp(18px,3vw,38px); padding-bottom:10px}
+.intro__stats div{border-left:1px solid var(--line-2); padding-left:14px}
+.intro__stats dt{font:500 9px/1 var(--mono); letter-spacing:.22em; color:var(--faint); text-transform:uppercase; white-space:nowrap}
+.intro__stats dd{margin:10px 0 0; font:600 22px/1 var(--mono); color:var(--bone); letter-spacing:.04em}
+
+/* ---------- section bar ---------- */
+.sec-bar{display:flex; align-items:center; gap:18px; padding:22px 0 26px; border-top:1px solid var(--line)}
+.sec-bar span{font:600 10px/1 var(--mono); letter-spacing:.24em; color:var(--dim); text-transform:uppercase; white-space:nowrap}
+.sec-bar span b{color:var(--amber); font-weight:600}
+.sec-bar::after{content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--line-2),transparent)}
+
+/* ---------- grid + card ---------- */
+.grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(20px,3vw,30px); padding-bottom:clamp(60px,9vw,110px)}
+.card{
+  position:relative; display:block; text-decoration:none; color:inherit; outline:none;
+  border:1px solid var(--line); border-radius:2px; overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,0));
+  transition:transform .45s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .45s;
+}
+.card:hover,.card:focus-visible{transform:translateY(-6px); border-color:rgba(255,179,71,.42); box-shadow:0 24px 60px -28px rgba(0,0,0,.9), 0 0 0 1px rgba(255,179,71,.08)}
+.card:focus-visible{box-shadow:0 0 0 2px var(--amber)}
+.card__frame{position:relative; aspect-ratio:16/10; overflow:hidden; background:#05070a; border-bottom:1px solid var(--line)}
+.card__live{
+  position:absolute; top:0; left:0; width:1280px; height:800px; border:0;
+  transform-origin:0 0; opacity:0; pointer-events:none; z-index:3; background:#05070a;
+  transition:opacity .6s ease;
+}
+.card.is-live .card__live{opacity:1}
+.frame__corners i{position:absolute; width:14px; height:14px; border:1px solid rgba(232,228,218,.45); z-index:6; pointer-events:none}
+.frame__corners i:nth-child(1){top:10px; left:10px; border-right:0; border-bottom:0}
+.frame__corners i:nth-child(2){top:10px; right:10px; border-left:0; border-bottom:0}
+.frame__corners i:nth-child(3){bottom:10px; left:10px; border-right:0; border-top:0}
+.frame__corners i:nth-child(4){bottom:10px; right:10px; border-left:0; border-top:0}
+.card__hint{
+  position:absolute; left:14px; bottom:12px; z-index:7; display:inline-flex; align-items:center; gap:7px;
+  font:500 9px/1 var(--mono); letter-spacing:.18em; text-transform:uppercase; color:var(--bone);
+  background:rgba(8,10,12,.7); border:1px solid var(--line-2); padding:7px 9px;
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+  transition:color .3s,border-color .3s;
+}
+.card__hint i{width:5px; height:5px; border-radius:50%; background:var(--faint)}
+.hint-live{display:none}
+.card.is-live .hint-idle{display:none}
+.card.is-live .hint-live{display:inline}
+.card.is-live .card__hint{color:var(--amber); border-color:rgba(255,179,71,.45)}
+.card.is-live .card__hint i{background:var(--amber); box-shadow:0 0 7px var(--amber)}
+
+.card__body{padding:clamp(20px,2.4vw,28px)}
+.card__meta{display:flex; align-items:center; justify-content:space-between; gap:12px}
+.card__no{font:600 11px/1 var(--mono); letter-spacing:.2em; color:var(--amber)}
+.card__badge{font:500 9px/1 var(--mono); letter-spacing:.18em; color:var(--dim); border:1px solid var(--line); padding:6px 9px; text-transform:uppercase; white-space:nowrap}
+.card__title{margin:20px 0 0; font-size:clamp(22px,2.4vw,29px); line-height:1.25; font-weight:700; letter-spacing:.01em}
+.card__en{display:block; margin-top:8px; font:500 10px/1.4 var(--mono); letter-spacing:.26em; color:var(--faint); text-transform:uppercase}
+.card__desc{margin:16px 0 0; font-size:13px; line-height:1.85; color:var(--dim); min-height:3.7em}
+.card__foot{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:24px; padding-top:16px; border-top:1px solid var(--line)}
+.card__file{font:500 10px/1 var(--mono); letter-spacing:.1em; color:var(--faint)}
+.card__go{display:inline-flex; align-items:center; gap:9px; font:600 11px/1 var(--mono); letter-spacing:.18em; color:var(--bone); text-transform:uppercase; transition:color .25s,gap .25s; white-space:nowrap}
+.card__go svg{width:16px; height:16px; transition:transform .3s}
+.card:hover .card__go,.card:focus-visible .card__go{color:var(--amber); gap:14px}
+.card:hover .card__go svg,.card:focus-visible .card__go svg{transform:translateX(3px)}
+
+/* ---------- posters (pure CSS, no images) ---------- */
+.poster{position:absolute; inset:0; overflow:hidden; z-index:1}
+.poster::after{content:""; position:absolute; inset:0; z-index:4; background:linear-gradient(180deg,transparent 38%,rgba(5,7,10,.78)); pointer-events:none}
+.p-scan{position:absolute; inset:0; z-index:5; opacity:.35; pointer-events:none; background:repeating-linear-gradient(180deg,transparent 0 3px,rgba(0,0,0,.35) 3px 4px)}
+.p-hud{position:absolute; left:18px; right:18px; top:16px; z-index:6; display:flex; justify-content:space-between; gap:12px; font:500 9px/1 var(--mono); letter-spacing:.18em; color:rgba(232,228,218,.62); text-transform:uppercase}
+.p-big{position:absolute; left:18px; bottom:16px; z-index:6; font:800 clamp(28px,4vw,52px)/.92 var(--mono); letter-spacing:.04em; color:rgba(232,228,218,.94); text-transform:uppercase}
+.p-sub{position:absolute; right:18px; bottom:18px; z-index:6; font:500 9px/1.5 var(--mono); letter-spacing:.18em; color:rgba(232,228,218,.5); text-transform:uppercase; text-align:right}
+
+/* game poster: 港区夜景 + 透视网格 + 集装箱剪影 */
+.poster--game{background:radial-gradient(120% 100% at 68% 8%, #3b1e0d 0%, #17100b 42%, #07090b 100%)}
+.p-glow{position:absolute; left:50%; top:38%; width:78%; aspect-ratio:1; z-index:1; transform:translate(-50%,-50%); background:radial-gradient(circle,rgba(255,158,66,.5),rgba(210,84,32,.16) 42%,transparent 70%); filter:blur(10px); animation:breathe 5s ease-in-out infinite}
+.p-grid{position:absolute; left:-35%; right:-35%; bottom:-40%; height:112%; z-index:2;
+  background-image:linear-gradient(rgba(255,179,71,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(255,179,71,.22) 1px,transparent 1px);
+  background-size:46px 46px; transform:perspective(360px) rotateX(66deg);
+  -webkit-mask-image:linear-gradient(to bottom,transparent 2%,#000 52%,transparent 94%);
+  mask-image:linear-gradient(to bottom,transparent 2%,#000 52%,transparent 94%)}
+.p-blocks{position:absolute; left:0; right:0; bottom:20%; height:34%; z-index:3; display:flex; align-items:flex-end; gap:2.2%; padding:0 3%; opacity:.62}
+.p-blocks i{flex:1; background:linear-gradient(180deg,#1b1712,#08090b); border-top:1px solid rgba(255,179,71,.22)}
+.p-blocks i:nth-child(1){height:48%}.p-blocks i:nth-child(2){height:74%}.p-blocks i:nth-child(3){height:36%}
+.p-blocks i:nth-child(4){height:88%}.p-blocks i:nth-child(5){height:58%}.p-blocks i:nth-child(6){height:70%}
+.p-blocks i:nth-child(7){height:42%}.p-blocks i:nth-child(8){height:80%}
+.p-cross{position:absolute; left:50%; top:46%; z-index:6; transform:translate(-50%,-50%); color:var(--amber); font:300 26px/1 var(--mono); opacity:.7}
+
+/* space poster: 吸积盘 + 引力透镜光环 + 星点 */
+.poster--space{background:radial-gradient(85% 75% at 50% 52%, #1a0f09 0%, #08090d 52%, #020305 100%)}
+.p-stars{position:absolute; inset:0; z-index:1; opacity:.75;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, #fff, transparent), radial-gradient(1px 1px at 24% 62%, #fff, transparent),
+    radial-gradient(1px 1px at 33% 12%, #fff, transparent), radial-gradient(1.5px 1.5px at 68% 22%, #fff, transparent),
+    radial-gradient(1px 1px at 82% 40%, #fff, transparent), radial-gradient(1px 1px at 91% 14%, #fff, transparent),
+    radial-gradient(1px 1px at 8% 76%, #fff, transparent), radial-gradient(1.5px 1.5px at 76% 82%, #fff, transparent),
+    radial-gradient(1px 1px at 46% 8%, #fff, transparent), radial-gradient(1px 1px at 58% 88%, #fff, transparent),
+    radial-gradient(1px 1px at 94% 68%, #fff, transparent), radial-gradient(1px 1px at 18% 40%, #fff, transparent)}
+.p-halo{position:absolute; left:50%; top:50%; width:90%; aspect-ratio:1; z-index:2; transform:translate(-50%,-50%); background:radial-gradient(circle,rgba(255,184,107,.3),rgba(255,120,50,.09) 34%,transparent 64%)}
+.p-disk{position:absolute; left:50%; top:50%; width:80%; aspect-ratio:1; z-index:3; border-radius:50%;
+  background:conic-gradient(from 210deg, transparent 0deg, #ffdfae 40deg, #ff9a4d 90deg, #ff6a2a 140deg, #ffd9a0 190deg, #ff8a3d 240deg, transparent 320deg);
+  filter:blur(2px);
+  -webkit-mask:radial-gradient(circle, transparent 0 28%, #000 34%, #000 66%, transparent 76%);
+  mask:radial-gradient(circle, transparent 0 28%, #000 34%, #000 66%, transparent 76%);
+  animation:diskspin 24s linear infinite}
+.p-ring{position:absolute; left:50%; top:50%; width:42%; height:42%; z-index:4; transform:translate(-50%,-50%); border-radius:50%; border:1px solid rgba(255,200,140,.35); box-shadow:0 0 16px rgba(255,170,90,.28)}
+.p-hole{position:absolute; left:50%; top:50%; width:26%; aspect-ratio:1; z-index:5; transform:translate(-50%,-50%); border-radius:50%; background:#000; box-shadow:0 0 0 2px rgba(255,190,120,.7), 0 0 20px 5px rgba(255,150,70,.4), inset 0 0 24px #000}
+.card:hover .p-disk,.card:focus-visible .p-disk{animation-duration:7s}
+
+/* ---------- footer ---------- */
+.site-foot{border-top:1px solid var(--line)}
+.site-foot .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding-top:26px; padding-bottom:36px; font:500 10px/1.7 var(--mono); letter-spacing:.14em; color:var(--faint); text-transform:uppercase}
+.site-foot b{color:var(--dim); font-weight:500}
+
+/* ---------- motion ---------- */
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes breathe{0%,100%{opacity:.72; transform:translate(-50%,-50%) scale(1)}50%{opacity:1; transform:translate(-50%,-50%) scale(1.09)}}
+@keyframes diskspin{from{transform:translate(-50%,-50%) rotateX(72deg) rotate(0deg)}to{transform:translate(-50%,-50%) rotateX(72deg) rotate(360deg)}}
+
+@media(max-width:820px){
+  .grid{grid-template-columns:1fr}
+  .intro{grid-template-columns:1fr; gap:32px}
+  .intro__stats{padding-bottom:0}
+}
+@media(max-width:480px){
+  .head-right{width:100%; justify-content:space-between}
+  .p-sub{display:none}
+  .card__desc{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important; animation-iteration-count:1!important; transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Awesome Craft 首页">
+      <span class="brand__mark"><span>AC</span></span>
+      <span class="brand__name">AWESOME<em>/</em>CRAFT</span>
+    </a>
+    <div class="head-right">
+      <span class="status"><i></i>INDEX / 02 ENTRIES</span>
+      <a href="https://github.com/jetamie/awesome-craft" target="_blank" rel="noopener">GITHUB &#8599;</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="intro">
+    <div>
+      <p class="eyebrow">INDEX OF EXPERIMENTS</p>
+      <h1>单文件<span>可交互实验</span></h1>
+      <p class="lede">两件纯前端作品，各自一个 HTML 文件、零外部依赖。<br>悬停卡片可实时预览，点击进入全屏体验。</p>
+    </div>
+    <dl class="intro__stats">
+      <div><dt>PAGES</dt><dd>02</dd></div>
+      <div><dt>DEPENDENCIES</dt><dd>00</dd></div>
+      <div><dt>RUNTIME</dt><dd>BROWSER</dd></div>
+    </dl>
+  </section>
+
+  <div class="sec-bar"><span><b>01</b> &nbsp;/&nbsp; SELECTED WORK</span></div>
+
+  <!-- 新增页面时：复制一张 .card，改 href、data-src、文案与 poster 类名即可 -->
+  <section class="grid" aria-label="作品列表">
+
+    <a class="card" href="3A.html" aria-label="打开 3A 大作">
+      <div class="card__frame">
+        <div class="poster poster--game" aria-hidden="true">
+          <div class="p-glow"></div>
+          <div class="p-grid"></div>
+          <div class="p-blocks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="p-hud"><span>B4 / 突击小队</span><span>港区 &middot; 05:42</span></div>
+          <div class="p-cross">+</div>
+          <div class="p-big">PORT<br>AUTHORITY</div>
+          <div class="p-sub">WASD / MOUSE<br>OBJECTIVE: 3 RELAYS</div>
+          <div class="p-scan"></div>
+        </div>
+        <iframe class="card__live" data-src="3A.html" title="3A 大作实时预览" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        <div class="frame__corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <span class="card__hint"><i></i><span class="hint-idle">HOVER TO PREVIEW</span><span class="hint-live">LIVE PREVIEW</span></span>
+      </div>
+      <div class="card__body">
+        <div class="card__meta"><span class="card__no">01</span><span class="card__badge">FPS / WebGL</span></div>
+        <h2 class="card__title">3A 大作<span class="card__en">Port Authority</span></h2>
+        <p class="card__desc">港区防御系统失控，切断三处中继、突破封锁、登船撤离。纯 WebGL 着色器绘制的国产第一人称射击体验版，含罗盘 HUD 与触屏操控。</p>
+        <div class="card__foot">
+          <span class="card__file">3A.html</span>
+          <span class="card__go">进入 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="black-hole.html" aria-label="打开 黑洞 · 太阳耀斑 · 太阳系">
+      <div class="card__frame">
+        <div class="poster poster--space" aria-hidden="true">
+          <div class="p-stars"></div>
+          <div class="p-halo"></div>
+          <div class="p-disk"></div>
+          <div class="p-ring"></div>
+          <div class="p-hole"></div>
+          <div class="p-hud"><span>GARGANTUA</span><span>M &middot; 4.3&times;10<sup>6</sup> M&#9737;</span></div>
+          <div class="p-big">NULL<br>GEODESICS</div>
+          <div class="p-sub">SCHWARZSCHILD<br>RAY TRACING</div>
+          <div class="p-scan"></div>
+        </div>
+        <iframe class="card__live" data-src="black-hole.html" title="黑洞可视化实时预览" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        <div class="frame__corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <span class="card__hint"><i></i><span class="hint-idle">HOVER TO PREVIEW</span><span class="hint-live">LIVE PREVIEW</span></span>
+      </div>
+      <div class="card__body">
+        <div class="card__meta"><span class="card__no">02</span><span class="card__badge">WebGL / Ray Tracing</span></div>
+        <h2 class="card__title">黑洞 &middot; 太阳耀斑 &middot; 太阳系<span class="card__en">Null Geodesics</span></h2>
+        <p class="card__desc">以史瓦西零测地线光线追踪实时渲染黑洞与吸积盘，支持电影 / 真实物理模式；另可切换太阳耀斑与太阳系场景。</p>
+        <div class="card__foot">
+          <span class="card__file">black-hole.html</span>
+          <span class="card__go">进入 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span><b>AWESOME / CRAFT</b> &nbsp;&middot;&nbsp; SINGLE FILE &middot; NO BUILD &middot; NO DEPENDENCIES</span>
+    <span>HOSTED ON GITHUB PAGES</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var PREVIEW_W = 1280;                 /* iframe 固定宽，配合 16:10 容器等比缩放 */
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  function fit() {
+    cards.forEach(function (card) {
+      var frame = card.querySelector('.card__frame');
+      var live = card.querySelector('.card__live');
+      if (frame && live) live.style.transform = 'scale(' + (frame.clientWidth / PREVIEW_W) + ')';
+    });
+  }
+
+  function activate(card) {
+    var live = card.querySelector('.card__live');
+    if (!live || live.dataset.state) return;
+    live.dataset.state = 'loading';
+    live.addEventListener('load', function () {
+      live.dataset.state = 'ready';
+      card.classList.add('is-live');       /* 载入完成后再淡入，避免白屏闪烁 */
+    }, { once: true });
+    live.addEventListener('error', function () { live.dataset.state = 'error'; }, { once: true });
+    live.src = live.dataset.src;
+  }
+
+  cards.forEach(function (card) {
+    var hint = card.querySelector('.hint-idle');
+    var timer = null;
+    if (canHover) {
+      card.addEventListener('mouseenter', function () {
+        timer = window.setTimeout(function () { activate(card); }, 160); /* 防快速划过误触发 */
+      });
+      card.addEventListener('mouseleave', function () { window.clearTimeout(timer); });
+      card.addEventListener('focusin', activate.bind(null, card));
+    } else if (hint) {
+      hint.textContent = 'TAP TO OPEN';    /* 触屏设备不加载实时预览，点击直接跳转 */
+    }
+  });
+
+  fit();
+  if (window.ResizeObserver) {
+    var ro = new ResizeObserver(fit);
+    cards.forEach(function (card) { ro.observe(card.querySelector('.card__frame')); });
+  } else {
+    window.addEventListener('resize', fit);
+  }
+  window.addEventListener('load', fit);
+})();
+</script>
+</body>
+</html>
