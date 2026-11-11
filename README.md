@@ -8,7 +8,7 @@
 
 | # | 作品 | 文件 | 说明 |
 |---|---|---|---|
-| 01 | 3A 大作 / Port Authority | [`3A.html`](3A.html) | 港区题材第一人称射击体验版，纯 WebGL 着色器绘制，含罗盘 HUD、任务系统与触屏操控 |
+| 01 | 3A 大作 / Port Authority | [`port-authority.html`](port-authority.html) | 港区题材第一人称射击体验版，纯 WebGL 着色器绘制，含罗盘 HUD、任务系统与触屏操控 |
 | 02 | 黑洞 · 太阳耀斑 · 太阳系 / Null Geodesics | [`black-hole.html`](black-hole.html) | 史瓦西零测地线光线追踪，实时渲染黑洞与吸积盘；可切换电影 / 真实物理模式，另有太阳耀斑、太阳系场景 |
 
 入口页 [`index.html`](index.html) 是作品索引，悬停卡片可实时预览对应页面。
@@ -42,7 +42,7 @@ Push 到 `main` 后由 [`.github/workflows/pages.yml`](.github/workflows/pages.y
 ```
 .
 ├── index.html                    # Pages 入口 / 作品索引
-├── 3A.html                       # 作品 01
+├── port-authority.html           # 作品 01
 ├── black-hole.html               # 作品 02
 ├── .nojekyll                     # 跳过 Jekyll 构建
 └── .github/workflows/pages.yml   # Pages 自动部署
