@@ -6,10 +6,10 @@
 
 ## 作品
 
-| # | 作品 | 文件 | 说明 |
+| # | 作品 | 目录 | 说明 |
 |---|---|---|---|
-| 01 | 3A 大作 / Port Authority | [`port-authority.html`](port-authority.html) | 港区题材第一人称射击体验版，纯 WebGL 着色器绘制，含罗盘 HUD、任务系统与触屏操控 |
-| 02 | 黑洞 · 太阳耀斑 · 太阳系 / Null Geodesics | [`black-hole.html`](black-hole.html) | 史瓦西零测地线光线追踪，实时渲染黑洞与吸积盘；可切换电影 / 真实物理模式，另有太阳耀斑、太阳系场景 |
+| 01 | 3A 大作 / Port Authority | [`works/port-authority/`](works/port-authority/) | 港区题材第一人称射击体验版，纯 WebGL 着色器绘制，含罗盘 HUD、任务系统与触屏操控 |
+| 02 | 黑洞 · 太阳耀斑 · 太阳系 / Null Geodesics | [`works/black-hole/`](works/black-hole/) | 史瓦西零测地线光线追踪，实时渲染黑洞与吸积盘；可切换电影 / 真实物理模式，另有太阳耀斑、太阳系场景 |
 
 入口页 [`index.html`](index.html) 是作品索引，悬停卡片可实时预览对应页面。
 
@@ -26,8 +26,8 @@ python -m http.server 8000
 
 ## 新增作品
 
-1. 把新的 `.html` 放进仓库根目录。
-2. 在 `index.html` 中复制一张 `.card`，改 `href`、`data-src`、标题、描述与封面类名。
+1. 新建目录 `works/<slug>/`，把作品放成 `works/<slug>/index.html`（这样访问 `/works/<slug>/` 直达，且作品后续要加贴图、音频等资源时有地方放）。
+2. 在 `index.html` 中复制一张 `.card`，改 `href`、`data-src`、标题、描述与封面类名，两者都指向 `works/<slug>/`。
 
 GitHub Pages 是静态站点，无法自动列举目录文件，所以卡片列表需要手动维护。
 
@@ -41,9 +41,12 @@ Push 到 `main` 后由 [`.github/workflows/pages.yml`](.github/workflows/pages.y
 
 ```
 .
-├── index.html                    # Pages 入口 / 作品索引
-├── port-authority.html           # 作品 01
-├── black-hole.html               # 作品 02
-├── .nojekyll                     # 跳过 Jekyll 构建
-└── .github/workflows/pages.yml   # Pages 自动部署
+├── index.html                        # Pages 入口 / 作品索引
+├── works/
+│   ├── port-authority/
+│   │   └── index.html                # 作品 01
+│   └── black-hole/
+│       └── index.html                # 作品 02
+├── .nojekyll                         # 跳过 Jekyll 构建
+└── .github/workflows/pages.yml       # Pages 自动部署
 ```

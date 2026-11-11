@@ -13,8 +13,10 @@
 <style>
 /* ============================================================
    AWESOME CRAFT / index.html — GitHub Pages 入口
-   新增页面：复制下方一张 <a class="card"> 结构，改 href / data-src /
-   标题 / 描述即可（GitHub Pages 是静态站点，无法自动列举目录文件）。
+   作品统一放在 works/<slug>/index.html，卡片链接到该目录即可。
+   新增作品：新建 works/<slug>/index.html，再复制下方一张
+   <a class="card"> 结构，改 href / data-src / 标题 / 描述即可
+   （GitHub Pages 是静态站点，无法自动列举目录文件）。
    实时预览只在支持 hover 的设备上按需加载，不影响首屏。
    ============================================================ */
 :root{
@@ -66,6 +68,7 @@ a{color:inherit}
 .intro h1{margin:0; font-size:clamp(42px,8.2vw,92px); line-height:1.02; font-weight:800; letter-spacing:-.02em}
 .intro h1 span{display:block; background:linear-gradient(96deg,var(--amber),var(--rust) 70%,#ff8a5c); -webkit-background-clip:text; background-clip:text; color:transparent}
 .lede{margin:26px 0 0; max-width:540px; color:var(--dim); font-size:14px; line-height:1.9}
+.lede code{font:500 12px/1 var(--mono); color:var(--amber); background:rgba(255,179,71,.08); border:1px solid rgba(255,179,71,.22); border-radius:2px; padding:2px 5px; letter-spacing:.04em; white-space:nowrap}
 .intro__stats{display:flex; gap:clamp(18px,3vw,38px); padding-bottom:10px}
 .intro__stats div{border-left:1px solid var(--line-2); padding-left:14px}
 .intro__stats dt{font:500 9px/1 var(--mono); letter-spacing:.22em; color:var(--faint); text-transform:uppercase; white-space:nowrap}
@@ -217,7 +220,7 @@ a{color:inherit}
     <div>
       <p class="eyebrow">INDEX OF EXPERIMENTS</p>
       <h1>AWESOME<span>CRAFT</span></h1>
-      <p class="lede">两件纯前端作品，各自一个 HTML 文件、零外部依赖。<br>悬停卡片可实时预览，点击进入全屏体验。</p>
+      <p class="lede">两件纯前端作品，各自一个 HTML 文件、零外部依赖，分别收在 <code>works/</code> 下的独立目录。<br>悬停卡片可实时预览，点击进入全屏体验。</p>
     </div>
     <dl class="intro__stats">
       <div><dt>PAGES</dt><dd>02</dd></div>
@@ -228,10 +231,10 @@ a{color:inherit}
 
   <div class="sec-bar"><span><b>01</b> &nbsp;/&nbsp; SELECTED WORK</span></div>
 
-  <!-- 新增页面时：复制一张 .card，改 href、data-src、文案与 poster 类名即可 -->
+  <!-- 新增作品时：新建 works/<slug>/index.html，再复制一张 .card，改 href、data-src、文案与 poster 类名即可 -->
   <section class="grid" aria-label="作品列表">
 
-    <a class="card" href="port-authority.html" aria-label="打开 3A 大作">
+    <a class="card" href="works/port-authority/" aria-label="打开 3A 大作">
       <div class="card__frame">
         <div class="poster poster--game" aria-hidden="true">
           <div class="p-glow"></div>
@@ -243,7 +246,7 @@ a{color:inherit}
           <div class="p-sub">WASD / MOUSE<br>OBJECTIVE: 3 RELAYS</div>
           <div class="p-scan"></div>
         </div>
-        <iframe class="card__live" data-src="port-authority.html" title="3A 大作实时预览" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        <iframe class="card__live" data-src="works/port-authority/" title="3A 大作实时预览" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
         <div class="frame__corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
         <span class="card__hint"><i></i><span class="hint-idle">HOVER TO PREVIEW</span><span class="hint-live">LIVE PREVIEW</span></span>
       </div>
@@ -252,13 +255,13 @@ a{color:inherit}
         <h2 class="card__title">3A 大作<span class="card__en">Port Authority</span></h2>
         <p class="card__desc">港区防御系统失控，切断三处中继、突破封锁、登船撤离。纯 WebGL 着色器绘制的国产第一人称射击体验版，含罗盘 HUD 与触屏操控。</p>
         <div class="card__foot">
-          <span class="card__file">port-authority.html</span>
+          <span class="card__file">works/port-authority/</span>
           <span class="card__go">进入 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </div>
     </a>
 
-    <a class="card" href="black-hole.html" aria-label="打开 黑洞 · 太阳耀斑 · 太阳系">
+    <a class="card" href="works/black-hole/" aria-label="打开 黑洞 · 太阳耀斑 · 太阳系">
       <div class="card__frame">
         <div class="poster poster--space" aria-hidden="true">
           <div class="p-stars"></div>
@@ -271,7 +274,7 @@ a{color:inherit}
           <div class="p-sub">SCHWARZSCHILD<br>RAY TRACING</div>
           <div class="p-scan"></div>
         </div>
-        <iframe class="card__live" data-src="black-hole.html" title="黑洞可视化实时预览" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        <iframe class="card__live" data-src="works/black-hole/" title="黑洞可视化实时预览" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
         <div class="frame__corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
         <span class="card__hint"><i></i><span class="hint-idle">HOVER TO PREVIEW</span><span class="hint-live">LIVE PREVIEW</span></span>
       </div>
@@ -280,7 +283,7 @@ a{color:inherit}
         <h2 class="card__title">黑洞 &middot; 太阳耀斑 &middot; 太阳系<span class="card__en">Null Geodesics</span></h2>
         <p class="card__desc">以史瓦西零测地线光线追踪实时渲染黑洞与吸积盘，支持电影 / 真实物理模式；另可切换太阳耀斑与太阳系场景。</p>
         <div class="card__foot">
-          <span class="card__file">black-hole.html</span>
+          <span class="card__file">works/black-hole/</span>
           <span class="card__go">进入 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </div>
