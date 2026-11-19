@@ -8,7 +8,7 @@
 
 | # | 作品 | 目录 | 说明 |
 |---|---|---|---|
-| 01 | Saltline | [`works/port-authority/`](works/port-authority/) | 港区题材第一人称射击体验版，纯 WebGL 着色器绘制，含罗盘 HUD、任务系统与触屏操控 |
+| 01 | Saltline | [`works/saltline/`](works/saltline/) | 港区题材第一人称射击体验版，纯 WebGL 着色器绘制，含罗盘 HUD、任务系统与触屏操控 |
 | 02 | 黑洞 · 太阳耀斑 · 太阳系 / Null Geodesics | [`works/black-hole/`](works/black-hole/) | 史瓦西零测地线光线追踪，实时渲染黑洞与吸积盘；可切换电影 / 真实物理模式，另有太阳耀斑、太阳系场景 |
 | 03 | 赤龍 · Crimson Loong | [`works/crimson-loong/`](works/crimson-loong/) | 90 秒双龙电影，纯 three.js 实时生成：所有网格、纹理、着色器与音符都由代码写出，零素材、零网络请求（WebGL 2，点击开启声音） |
 | 04 | 鹈鹕骑行 / Pelican Bicycle | [`works/pelican-bicycle/`](works/pelican-bicycle/) | 手绘风横版骑行跑酷，吃鱼得分、跳跃振翅越过路障、按铃赶海鸥，四段昼夜场景，支持键盘与触屏 |
@@ -50,7 +50,7 @@ Push 到 `main` 后由 [`.github/workflows/pages.yml`](.github/workflows/pages.y
 .
 ├── index.html                        # Pages 入口 / 作品索引
 ├── works/
-│   ├── port-authority/
+│   ├── saltline/
 │   │   └── index.html                # 作品 01
 │   ├── black-hole/
 │   │   └── index.html                # 作品 02
