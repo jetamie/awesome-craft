@@ -10,8 +10,15 @@
 |---|---|---|---|
 | 01 | 3A 大作 / Port Authority | [`works/port-authority/`](works/port-authority/) | 港区题材第一人称射击体验版，纯 WebGL 着色器绘制，含罗盘 HUD、任务系统与触屏操控 |
 | 02 | 黑洞 · 太阳耀斑 · 太阳系 / Null Geodesics | [`works/black-hole/`](works/black-hole/) | 史瓦西零测地线光线追踪，实时渲染黑洞与吸积盘；可切换电影 / 真实物理模式，另有太阳耀斑、太阳系场景 |
+| 03 | 赤龍 · Crimson Loong | [`works/crimson-loong/`](works/crimson-loong/) | 90 秒双龙电影，纯 three.js 实时生成：所有网格、纹理、着色器与音符都由代码写出，零素材、零网络请求（WebGL 2，点击开启声音） |
+| 04 | 鹈鹕骑行 / Pelican Bicycle | [`works/pelican-bicycle/`](works/pelican-bicycle/) | 手绘风横版骑行跑酷，吃鱼得分、跳跃振翅越过路障、按铃赶海鸥，四段昼夜场景，支持键盘与触屏 |
 
 入口页 [`index.html`](index.html) 是作品索引，悬停卡片可实时预览对应页面。
+
+## 来源与致谢
+
+- `works/crimson-loong/` 转载自 [ChetasLua/crimson-loong](https://github.com/ChetasLua/crimson-loong)，原作「赤龍 · Crimson Loong」。页面内联 three.js r180（MIT，版权横幅保留在文件中）。**上游仓库未声明整体 License**，如需二次分发或商用请先向原作者确认授权。
+- 作品 01 / 02 / 04 未标注外部来源。
 
 ## 本地运行
 
@@ -45,8 +52,12 @@ Push 到 `main` 后由 [`.github/workflows/pages.yml`](.github/workflows/pages.y
 ├── works/
 │   ├── port-authority/
 │   │   └── index.html                # 作品 01
-│   └── black-hole/
-│       └── index.html                # 作品 02
+│   ├── black-hole/
+│   │   └── index.html                # 作品 02
+│   ├── crimson-loong/
+│   │   └── index.html                # 作品 03（来源见上）
+│   └── pelican-bicycle/
+│       └── index.html                # 作品 04
 ├── .nojekyll                         # 跳过 Jekyll 构建
 └── .github/workflows/pages.yml       # Pages 自动部署
 ```

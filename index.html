@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AWESOME CRAFT — 作品索引</title>
-<meta name="description" content="Awesome Craft：可交互的单文件 Web 实验索引。3A 大作、黑洞光线追踪可视化。">
+<meta name="description" content="Awesome Craft：零依赖单文件 Web 实验索引，含港区 FPS、黑洞可视化、赤龍双龙电影与鹈鹕骑行。">
 <meta name="theme-color" content="#080a0c">
 <meta property="og:title" content="AWESOME CRAFT — 作品索引">
-<meta property="og:description" content="两个零依赖、单文件的可交互 Web 实验。">
+<meta property="og:description" content="四个零依赖、单文件的可交互 Web 实验。">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080a0c'/%3E%3Cpath d='M16 5 L27 16 L16 27 L5 16 Z' fill='none' stroke='%23ffb347' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23ffb347'/%3E%3C/svg%3E">
 <style>
@@ -174,6 +174,56 @@ a{color:inherit}
 .p-hole{position:absolute; left:50%; top:50%; width:26%; aspect-ratio:1; z-index:5; transform:translate(-50%,-50%); border-radius:50%; background:#000; box-shadow:0 0 0 2px rgba(255,190,120,.7), 0 0 20px 5px rgba(255,150,70,.4), inset 0 0 24px #000}
 .card:hover .p-disk,.card:focus-visible .p-disk{animation-duration:7s}
 
+/* loong poster: 朱红落日 + 层叠喀斯特山影 + 竖排片名 */
+.poster--loong{background:radial-gradient(95% 78% at 50% 34%, #3d1010 0%, #1a0809 52%, #0a0506 100%)}
+.p-sun{position:absolute; left:50%; top:36%; width:46%; aspect-ratio:1; z-index:1; transform:translate(-50%,-50%); border-radius:50%;
+  background:radial-gradient(circle, #ff7a4d 0%, #d8322a 48%, #a51d1b 74%, rgba(165,29,27,0) 76%);
+  box-shadow:0 0 70px 12px rgba(216,50,42,.32); animation:breathe 6s ease-in-out infinite}
+.p-ridge{position:absolute; left:-6%; right:-6%; bottom:0; height:62%; z-index:3; background:#180809; opacity:.88;
+  clip-path:polygon(0 100%,0 58%,7% 46%,14% 56%,23% 26%,31% 44%,41% 18%,50% 42%,59% 26%,68% 50%,78% 32%,87% 52%,95% 40%,100% 50%,100% 100%)}
+.p-ridge--near{height:42%; background:#0d0506; opacity:.95; z-index:4;
+  clip-path:polygon(0 100%,0 62%,10% 48%,20% 60%,30% 40%,42% 58%,54% 36%,66% 56%,78% 42%,90% 60%,100% 46%,100% 100%)}
+.p-mist{position:absolute; left:0; right:0; top:44%; height:38%; z-index:5; pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(233,201,164,.10) 45%,transparent)}
+.p-ember{position:absolute; inset:0; z-index:6; opacity:.75;
+  background-image:
+    radial-gradient(2px 2px at 18% 24%, #ffb37a, transparent), radial-gradient(2px 2px at 76% 18%, #ff8a5c, transparent),
+    radial-gradient(1.5px 1.5px at 34% 62%, #ffc98f, transparent), radial-gradient(2px 2px at 88% 66%, #ff7a4d, transparent),
+    radial-gradient(1.5px 1.5px at 62% 78%, #ffb37a, transparent), radial-gradient(1.5px 1.5px at 12% 74%, #ff8a5c, transparent)}
+.p-vertical{position:absolute; right:20px; top:20%; z-index:7; writing-mode:vertical-rl; font:700 clamp(34px,5vw,60px)/1 var(--sans);
+  letter-spacing:.18em; color:#f0d5b3; text-shadow:0 0 24px rgba(216,50,42,.5)}
+.poster--loong::after{background:linear-gradient(180deg,transparent 45%,rgba(10,5,6,.72))}
+.poster--loong .p-hud{color:rgba(240,213,179,.66)}
+
+/* pelican poster: 明亮海岸 + 双轮 + 云（亮底，覆盖通用暗角与文字色） */
+.poster--pelican{background:linear-gradient(180deg,#7fc4d6 0%,#ffd9a8 46%,#ff9e7a 70%,#f3cf94 100%)}
+.p-daysun{position:absolute; left:22%; top:18%; width:18%; aspect-ratio:1; z-index:1; border-radius:50%;
+  background:radial-gradient(circle,#fff6d8,#ffe9a8 60%,rgba(255,233,168,0) 72%); box-shadow:0 0 40px rgba(255,241,196,.6)}
+.p-clouds i{position:absolute; z-index:2; height:12px; border-radius:999px; background:rgba(255,248,239,.8)}
+.p-clouds i:nth-child(1){left:52%; top:18%; width:24%}
+.p-clouds i:nth-child(2){left:68%; top:30%; width:16%; opacity:.7}
+.p-clouds i:nth-child(3){left:8%; top:34%; width:14%; opacity:.6}
+.p-sea{position:absolute; left:0; right:0; bottom:0; height:34%; z-index:2;
+  background:linear-gradient(180deg,rgba(79,176,180,.65),rgba(31,138,150,.85)); border-top:2px solid rgba(255,248,239,.7)}
+.p-sea::after{content:""; position:absolute; inset:0; opacity:.35;
+  background:repeating-linear-gradient(180deg,rgba(255,255,255,.35) 0 1px,transparent 1px 9px)}
+.p-sand{position:absolute; left:0; right:0; bottom:0; height:14%; z-index:3; background:#f3cf94;
+  clip-path:polygon(0 40%,18% 30%,38% 46%,58% 28%,78% 42%,100% 30%,100% 100%,0 100%)}
+.p-wheel{position:absolute; bottom:9%; width:24%; aspect-ratio:1; z-index:5; border-radius:50%;
+  border:5px solid #2b2d42;
+  background:repeating-conic-gradient(from 0deg,rgba(43,45,66,.45) 0 1.2deg,transparent 1.2deg 30deg)}
+.p-wheel::after{content:""; position:absolute; left:50%; top:50%; width:16%; aspect-ratio:1; transform:translate(-50%,-50%);
+  border-radius:50%; background:#fff8ef; border:2px solid #2b2d42}
+.p-wheel--a{left:26%}.p-wheel--b{left:56%}
+.p-bikebar{position:absolute; left:34%; bottom:27%; width:30%; height:5px; z-index:4; background:#2b2d42; transform:rotate(-8deg)}
+.poster--pelican::after{background:linear-gradient(180deg,transparent 58%,rgba(43,45,66,.28))}
+.poster--pelican .p-scan{opacity:.12}
+.poster--pelican .p-hud{color:rgba(43,45,66,.7)}
+.poster--pelican .p-big{color:#2b2d42; text-shadow:0 1px 0 rgba(255,248,239,.5)}
+.poster--pelican .p-sub{color:rgba(43,45,66,.65)}
+.card--pelican .frame__corners i{border-color:rgba(43,45,66,.5)}
+.card--pelican:hover,.card--pelican:focus-visible{border-color:rgba(15,110,120,.6)}
+
 /* ---------- footer ---------- */
 .site-foot{border-top:1px solid var(--line)}
 .site-foot .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding-top:26px; padding-bottom:36px; font:500 10px/1.7 var(--mono); letter-spacing:.14em; color:var(--faint); text-transform:uppercase}
@@ -208,7 +258,7 @@ a{color:inherit}
       <span class="brand__name">AWESOME<em>/</em>CRAFT</span>
     </a>
     <div class="head-right">
-      <span class="status"><i></i>INDEX / 02 ENTRIES</span>
+      <span class="status"><i></i>INDEX / 04 ENTRIES</span>
       <a href="https://github.com/jetamie/awesome-craft" target="_blank" rel="noopener">GITHUB &#8599;</a>
     </div>
   </div>
@@ -220,10 +270,10 @@ a{color:inherit}
     <div>
       <p class="eyebrow">INDEX OF EXPERIMENTS</p>
       <h1>AWESOME<span>CRAFT</span></h1>
-      <p class="lede">两件纯前端作品，各自一个 HTML 文件、零外部依赖，分别收在 <code>works/</code> 下的独立目录。<br>悬停卡片可实时预览，点击进入全屏体验。</p>
+      <p class="lede">四件纯前端作品，各自一个 HTML 文件、零外部依赖，分别收在 <code>works/</code> 下的独立目录。<br>悬停卡片可实时预览，点击进入全屏体验。</p>
     </div>
     <dl class="intro__stats">
-      <div><dt>PAGES</dt><dd>02</dd></div>
+      <div><dt>PAGES</dt><dd>04</dd></div>
       <div><dt>DEPENDENCIES</dt><dd>00</dd></div>
       <div><dt>RUNTIME</dt><dd>BROWSER</dd></div>
     </dl>
@@ -284,6 +334,64 @@ a{color:inherit}
         <p class="card__desc">以史瓦西零测地线光线追踪实时渲染黑洞与吸积盘，支持电影 / 真实物理模式；另可切换太阳耀斑与太阳系场景。</p>
         <div class="card__foot">
           <span class="card__file">works/black-hole/</span>
+          <span class="card__go">进入 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card card--loong" href="works/crimson-loong/" aria-label="打开 赤龍 · Crimson Loong">
+      <div class="card__frame">
+        <div class="poster poster--loong" aria-hidden="true">
+          <div class="p-sun"></div>
+          <div class="p-ridge"></div>
+          <div class="p-ridge p-ridge--near"></div>
+          <div class="p-mist"></div>
+          <div class="p-ember"></div>
+          <div class="p-hud"><span>赤龍 / CRIMSON LOONG</span><span>90 SEC &middot; WEBGL 2</span></div>
+          <div class="p-vertical">赤龍</div>
+          <div class="p-sub">PURE THREE.JS<br>ZERO ASSETS</div>
+          <div class="p-scan"></div>
+        </div>
+        <iframe class="card__live" data-src="works/crimson-loong/" title="赤龍实时预览" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        <div class="frame__corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <span class="card__hint"><i></i><span class="hint-idle">HOVER TO PREVIEW</span><span class="hint-live">LIVE PREVIEW</span></span>
+      </div>
+      <div class="card__body">
+        <div class="card__meta"><span class="card__no">03</span><span class="card__badge">Three.js / WebGL 2</span></div>
+        <h2 class="card__title">赤龍 &middot; Crimson Loong<span class="card__en">A 90-Second Dragon Film</span></h2>
+        <p class="card__desc">90 秒双龙电影，全部在浏览器里实时生成：内联 three.js，每个网格、纹理、着色器与音符都由代码写出，零素材、零网络请求。原作 ChetasLua，点击开启声音。</p>
+        <div class="card__foot">
+          <span class="card__file">works/crimson-loong/</span>
+          <span class="card__go">进入 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card card--pelican" href="works/pelican-bicycle/" aria-label="打开 鹈鹕骑行">
+      <div class="card__frame">
+        <div class="poster poster--pelican" aria-hidden="true">
+          <div class="p-daysun"></div>
+          <div class="p-clouds"><i></i><i></i><i></i></div>
+          <div class="p-sea"></div>
+          <div class="p-sand"></div>
+          <div class="p-bikebar"></div>
+          <div class="p-wheel p-wheel--a"></div>
+          <div class="p-wheel p-wheel--b"></div>
+          <div class="p-hud"><span>PELICAN BICYCLE</span><span>4 STAGES &middot; CANVAS 2D</span></div>
+          <div class="p-big">PELICAN<br>BICYCLE</div>
+          <div class="p-sub">COAST RUN<br>EAT FISH &middot; RING THE BELL</div>
+          <div class="p-scan"></div>
+        </div>
+        <iframe class="card__live" data-src="works/pelican-bicycle/" title="鹈鹕骑行实时预览" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        <div class="frame__corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <span class="card__hint"><i></i><span class="hint-idle">HOVER TO PREVIEW</span><span class="hint-live">LIVE PREVIEW</span></span>
+      </div>
+      <div class="card__body">
+        <div class="card__meta"><span class="card__no">04</span><span class="card__badge">Canvas 2D / Game</span></div>
+        <h2 class="card__title">鹈鹕骑行<span class="card__en">Pelican Bicycle</span></h2>
+        <p class="card__desc">手绘风横版骑行跑酷：沿海岸吃鱼得分、跳跃振翅越过路障、按铃赶海鸥，四段昼夜场景（清晨 / 午后 / 黄昏 / 星夜），支持键盘与触屏。</p>
+        <div class="card__foot">
+          <span class="card__file">works/pelican-bicycle/</span>
           <span class="card__go">进入 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </div>
