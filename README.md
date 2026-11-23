@@ -12,12 +12,14 @@
 | 02 | 黑洞 · 太阳耀斑 · 太阳系 / Null Geodesics | [`works/black-hole/`](works/black-hole/) | 史瓦西零测地线光线追踪，实时渲染黑洞与吸积盘；可切换电影 / 真实物理模式，另有太阳耀斑、太阳系场景 |
 | 03 | 赤龍 · Crimson Loong | [`works/crimson-loong/`](works/crimson-loong/) | 90 秒双龙电影，纯 three.js 实时生成：所有网格、纹理、着色器与音符都由代码写出，零素材、零网络请求（WebGL 2，点击开启声音） |
 | 04 | 鹈鹕骑行 / Pelican Bicycle | [`works/pelican-bicycle/`](works/pelican-bicycle/) | 手绘风横版骑行跑酷，吃鱼得分、跳跃振翅越过路障、按铃赶海鸥，四段昼夜场景，支持键盘与触屏 |
+| 05 | Operation Ironhold | [`works/operation-ironhold/`](works/operation-ironhold/) | 3 分钟内清空 7 号区集装箱堆场的 10 名敌人；四把武器、ADS 瞄准、敌人 AI 与合成音效全部由代码生成。three.js r128 已内联，零网络请求（需桌面浏览器 + Pointer Lock） |
 
 入口页 [`index.html`](index.html) 是作品索引，悬停卡片可实时预览对应页面。
 
 ## 来源与致谢
 
 - `works/crimson-loong/` 转载自 [ChetasLua/crimson-loong](https://github.com/ChetasLua/crimson-loong)，原作「赤龍 · Crimson Loong」。页面内联 three.js r180（MIT，版权横幅保留在文件中）。**上游仓库未声明整体 License**，如需二次分发或商用请先向原作者确认授权。
+- `works/operation-ironhold/` 转载自 [StarKnightt/operation-ironhold](https://github.com/StarKnightt/operation-ironhold)（**MIT**）。原作单 HTML 依赖 CDN 上的 three.js r128；本站已把 three.js r128（MIT，版权横幅保留）内联进页面、并移除指向原站的 canonical / og 外链，使其与其余作品一样零外部依赖、可离线运行。
 - 作品 01 / 02 / 04 未标注外部来源。
 
 ## 本地运行
@@ -56,8 +58,10 @@ Push 到 `main` 后由 [`.github/workflows/pages.yml`](.github/workflows/pages.y
 │   │   └── index.html                # 作品 02
 │   ├── crimson-loong/
 │   │   └── index.html                # 作品 03（来源见上）
-│   └── pelican-bicycle/
-│       └── index.html                # 作品 04
+│   ├── pelican-bicycle/
+│   │   └── index.html                # 作品 04
+│   └── operation-ironhold/
+│       └── index.html                # 作品 05（来源见上）
 ├── .nojekyll                         # 跳过 Jekyll 构建
 └── .github/workflows/pages.yml       # Pages 自动部署
 ```

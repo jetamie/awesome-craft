@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AWESOME CRAFT — 作品索引</title>
-<meta name="description" content="Awesome Craft：零依赖单文件 Web 实验索引，含港区 FPS、黑洞可视化、赤龍双龙电影与鹈鹕骑行。">
+<meta name="description" content="Awesome Craft：零依赖单文件 Web 实验索引，含港区 FPS、黑洞可视化、赤龍双龙电影、鹈鹕骑行与 Operation Ironhold。">
 <meta name="theme-color" content="#080a0c">
 <meta property="og:title" content="AWESOME CRAFT — 作品索引">
-<meta property="og:description" content="四个零依赖、单文件的可交互 Web 实验。">
+<meta property="og:description" content="五个零依赖、单文件的可交互 Web 实验。">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080a0c'/%3E%3Cpath d='M16 5 L27 16 L16 27 L5 16 Z' fill='none' stroke='%23ffb347' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23ffb347'/%3E%3C/svg%3E">
 <style>
@@ -224,6 +224,31 @@ a{color:inherit}
 .card--pelican .frame__corners i{border-color:rgba(43,45,66,.5)}
 .card--pelican:hover,.card--pelican:focus-visible{border-color:rgba(15,110,120,.6)}
 
+/* ironhold poster: 冷色集装箱堆场 + 战术 HUD（与暖橙的 Saltline 区分） */
+.poster--ironhold{background:linear-gradient(180deg,#14252c 0%,#1b3038 42%,#0b151a 100%)}
+.p-ironsky{position:absolute; left:0; right:0; top:0; height:58%; z-index:1; background:linear-gradient(180deg,rgba(180,215,220,.10),transparent 70%)}
+.p-ironlight{position:absolute; left:50%; top:22%; width:74%; aspect-ratio:1; z-index:1; transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(120,190,205,.28),rgba(60,110,130,.10) 45%,transparent 70%); filter:blur(8px);
+  animation:breathe 5.5s ease-in-out infinite}
+.p-containers{position:absolute; left:0; right:0; bottom:16%; height:42%; z-index:3; display:flex; flex-wrap:wrap; align-content:flex-end; gap:3px; padding:0 4%; opacity:.9}
+.p-containers i{flex:1 1 18%; min-width:14%; height:22%; border:1px solid rgba(160,200,210,.16);
+  background:repeating-linear-gradient(90deg,rgba(120,160,175,.22) 0 2px,transparent 2px 9px),linear-gradient(180deg,#243b43,#16262d)}
+.p-containers i:nth-child(3n){background:repeating-linear-gradient(90deg,rgba(190,120,80,.20) 0 2px,transparent 2px 9px),linear-gradient(180deg,#3a2c27,#201a18)}
+.p-floor{position:absolute; left:-20%; right:-20%; bottom:-10%; height:34%; z-index:4;
+  background-image:linear-gradient(rgba(130,180,195,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(130,180,195,.16) 1px,transparent 1px);
+  background-size:38px 38px; transform:perspective(300px) rotateX(70deg);
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 60%,transparent);
+  mask-image:linear-gradient(to bottom,transparent,#000 60%,transparent)}
+.p-reticle{position:absolute; left:50%; top:44%; z-index:6; transform:translate(-50%,-50%); width:54px; height:54px;
+  border:1px solid rgba(255,120,90,.55); border-radius:50%}
+.p-reticle::before,.p-reticle::after{content:""; position:absolute; background:rgba(255,120,90,.7)}
+.p-reticle::before{left:50%; top:-8px; bottom:-8px; width:1px; transform:translateX(-50%)}
+.p-reticle::after{top:50%; left:-8px; right:-8px; height:1px; transform:translateY(-50%)}
+.p-timer{position:absolute; left:50%; top:13%; z-index:6; transform:translateX(-50%);
+  font:700 clamp(20px,3vw,34px)/1 var(--mono); letter-spacing:.16em; color:#ff7a5c; text-shadow:0 0 18px rgba(255,90,64,.5)}
+.poster--ironhold::after{background:linear-gradient(180deg,transparent 48%,rgba(6,12,15,.76))}
+.poster--ironhold .p-hud{color:rgba(190,220,225,.62)}
+
 /* ---------- footer ---------- */
 .site-foot{border-top:1px solid var(--line)}
 .site-foot .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding-top:26px; padding-bottom:36px; font:500 10px/1.7 var(--mono); letter-spacing:.14em; color:var(--faint); text-transform:uppercase}
@@ -258,7 +283,7 @@ a{color:inherit}
       <span class="brand__name">AWESOME<em>/</em>CRAFT</span>
     </a>
     <div class="head-right">
-      <span class="status"><i></i>INDEX / 04 ENTRIES</span>
+      <span class="status"><i></i>INDEX / 05 ENTRIES</span>
       <a href="https://github.com/jetamie/awesome-craft" target="_blank" rel="noopener">GITHUB &#8599;</a>
     </div>
   </div>
@@ -270,10 +295,10 @@ a{color:inherit}
     <div>
       <p class="eyebrow">INDEX OF EXPERIMENTS</p>
       <h1>AWESOME<span>CRAFT</span></h1>
-      <p class="lede">四件纯前端作品，各自一个 HTML 文件、零外部依赖，分别收在 <code>works/</code> 下的独立目录。<br>悬停卡片可实时预览，点击进入全屏体验。</p>
+      <p class="lede">五件纯前端作品，各自一个 HTML 文件、零外部依赖，分别收在 <code>works/</code> 下的独立目录。<br>悬停卡片可实时预览，点击进入全屏体验。</p>
     </div>
     <dl class="intro__stats">
-      <div><dt>PAGES</dt><dd>04</dd></div>
+      <div><dt>PAGES</dt><dd>05</dd></div>
       <div><dt>DEPENDENCIES</dt><dd>00</dd></div>
       <div><dt>RUNTIME</dt><dd>BROWSER</dd></div>
     </dl>
@@ -392,6 +417,35 @@ a{color:inherit}
         <p class="card__desc">手绘风横版骑行跑酷：沿海岸吃鱼得分、跳跃振翅越过路障、按铃赶海鸥，四段昼夜场景（清晨 / 午后 / 黄昏 / 星夜），支持键盘与触屏。</p>
         <div class="card__foot">
           <span class="card__file">works/pelican-bicycle/</span>
+          <span class="card__go">进入 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card card--ironhold" href="works/operation-ironhold/" aria-label="打开 Operation Ironhold">
+      <div class="card__frame">
+        <div class="poster poster--ironhold" aria-hidden="true">
+          <div class="p-ironsky"></div>
+          <div class="p-ironlight"></div>
+          <div class="p-containers"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="p-floor"></div>
+          <div class="p-reticle"></div>
+          <div class="p-timer">03:00</div>
+          <div class="p-hud"><span>SECTOR 7 / WAREHOUSE</span><span>HOSTILES 10</span></div>
+          <div class="p-big">IRON<br>HOLD</div>
+          <div class="p-sub">M4 / KS-12 / P-9 / SR-7<br>POINTER LOCK REQUIRED</div>
+          <div class="p-scan"></div>
+        </div>
+        <iframe class="card__live" data-src="works/operation-ironhold/" title="Operation Ironhold 实时预览" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+        <div class="frame__corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <span class="card__hint"><i></i><span class="hint-idle">HOVER TO PREVIEW</span><span class="hint-live">LIVE PREVIEW</span></span>
+      </div>
+      <div class="card__body">
+        <div class="card__meta"><span class="card__no">05</span><span class="card__badge">Three.js / FPS</span></div>
+        <h2 class="card__title">Operation Ironhold<span class="card__en">Sector 7 / Warehouse District</span></h2>
+        <p class="card__desc">三分钟内清空 7 号区集装箱堆场的 10 名敌人。四把武器、ADS 瞄准、敌人 AI 与合成音效全部由代码生成。原作 StarKnightt（MIT），已内联 three.js r128，零网络请求。</p>
+        <div class="card__foot">
+          <span class="card__file">works/operation-ironhold/</span>
           <span class="card__go">进入 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </div>
